@@ -3,7 +3,7 @@ package gov.ornl.rheaexamples;
 import java.util.Arrays;
 import java.util.Random;
 
-public class FirstExample {
+public class Utils {
 
 	public static double MIN_RANGE = 0.;
 	public static double MAX_RANGE = 25.0;

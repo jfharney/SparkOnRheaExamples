@@ -40,8 +40,14 @@ public class JavaPCAExample {
     SparkConf conf = new SparkConf().setAppName("PCA Example");
     SparkContext sc = new SparkContext(conf);
 
+    
     // $example on$
-    double[][] array = {{1.12, 2.05, 3.12}, {5.56, 6.28, 8.94}, {10.2, 8.0, 20.5}};
+    //double[][] array = {{1.12, 2.05, 3.12}, {5.56, 6.28, 8.94}, {10.2, 8.0, 20.5}};
+    int seed = 2;
+    int num_rows = 3;
+    int num_cols = 3;
+    double [] [] array = Utils.makeRandom2DArray(seed, num_rows, num_cols);
+    
     LinkedList<Vector> rowsList = new LinkedList<>();
     for (int i = 0; i < array.length; i++) {
       Vector currentRow = Vectors.dense(array[i]);
