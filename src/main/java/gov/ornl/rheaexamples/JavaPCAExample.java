@@ -44,8 +44,8 @@ public class JavaPCAExample {
     // $example on$
     //double[][] array = {{1.12, 2.05, 3.12}, {5.56, 6.28, 8.94}, {10.2, 8.0, 20.5}};
     int seed = 2;
-    int num_rows = 3;
-    int num_cols = 3;
+    int num_rows = 3000;
+    int num_cols =100;
     double [] [] array = Utils.makeRandom2DArray(seed, num_rows, num_cols);
     
     LinkedList<Vector> rowsList = new LinkedList<>();
@@ -59,7 +59,7 @@ public class JavaPCAExample {
     RowMatrix mat = new RowMatrix(rows.rdd());
 
     // Compute the top 3 principal components.
-    Matrix pc = mat.computePrincipalComponents(3);
+    Matrix pc = mat.computePrincipalComponents(5);
     RowMatrix projected = mat.multiply(pc);
     // $example off$
     Vector[] collectPartitions = (Vector[])projected.rows().collect();
