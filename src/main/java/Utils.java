@@ -1,4 +1,4 @@
-
+//package utils;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -11,13 +11,15 @@ public class Utils {
 
 	public static double MIN_RANGE = 0.;
 	public static double MAX_RANGE = 25.0;
-	public static String FILE_DIR = "/Users/8xo/software/examples_spark_on_rhea/SparkOnRheaExamples/src/main/java/gov/ornl/rheaexamples/";
+	//public static String FILE_DIR = "/Users/8xo/software/examples_spark_on_rhea/SparkOnRheaExamples/src/main/java/gov/ornl/rheaexamples/";
+        
+        public static String FILE_DIR = "/lustre/atlas/scratch/8xo/stf008/data/";
 	
 	public static void main(String [] args) {
 		System.out.println("First Example");
 		int seed = 2;
-		int num_rows = 5000;
-		int num_cols = 3500;
+		int num_rows = 1000;
+		int num_cols = 65536;
 		double [][] arr = makeRandom2DArray(seed,num_rows,num_cols);
 		for(int i=0;i<arr.length;i++) {
 			//System.out.println(Arrays.toString(arr[i]));

@@ -57,8 +57,9 @@ object TallSkinnySVD {
     val time2: Long = System.currentTimeMillis();
     
     // Compute SVD.
-    val svd = mat.computeSVD(mat.numCols().toInt)
-    
+    //val svd = mat.computeSVD(mat.numCols().toInt)
+    val svd = mat.computeSVD(50)
+
     val time3: Long = System.currentTimeMillis();
 
 	val singular = svd.s
@@ -78,11 +79,14 @@ object TallSkinnySVD {
     val time7: Long = System.currentTimeMillis();
     
     println("Num cols: " + mat.numCols().toInt)
-    println("Singular values are " + singular)
+    //println("Singular values are " + singular)
     println("time1 before load " + time1)
     println("time2 after load " + time2)
+    println("loading time: " + (time2-time1))
     println("time3 after computeSVD " + time3)
+    println("computing time for SVD: " + (time3-time2))
     println("time4 after singular values " + time4)
+    println("singluar values: " + (time4-time3))
     println("time5 after finding u " + time5)
     println("time6 after finding v " + time6)
     println("time7 after flusing to disk " + time7)
